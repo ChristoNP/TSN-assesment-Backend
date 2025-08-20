@@ -34,8 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         notNull: { msg: "Years is required" },
-        notEmpty: { msg: "Years cannot be empty" },
-        isNumeric: { msg: "Years must be a number" }
+        notEmpty: { msg: "Years cannot be empty" }
       }
     },
     average: {

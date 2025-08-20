@@ -7,6 +7,8 @@ const router = express.Router();
 router.get('/questions', QuestionController.getAllQuestions)
 
 // Submissions
+router.get('/submissions', SubmissionController.getAllSubmissions)
+router.get('/submissions/:id', SubmissionController.getSubmissionById)
 router.post('/submissions', SubmissionController.createSubmission)
 
 module.exports = router

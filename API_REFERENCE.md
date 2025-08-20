@@ -25,6 +25,86 @@ Returns the list of assessment questions (ordered by `order` ascending).
 
 ---
 
+## GET /api/submissions
+Returns the list of all users submission.
+
+**Response 200**
+```json
+{
+  "status": "OK",
+  "message": "Submission created successfully",
+  "data": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "department": "Engineering",
+    "years": 3,
+    "average": 4.2,
+    "createdAt": "2025-08-20T16:00:00.000Z",
+    "updatedAt": "2025-08-20T16:00:00.000Z"
+  }
+}
+```
+
+**Validation Errors**
+- If submission not found, response is `404` with:
+```json
+{
+  "status": "ERROR",
+  "message": "Submission not found",
+  "data": null
+}
+```
+
+**Server Error 500**
+```json
+{
+  "status": "ERROR",
+  "message": "<error message>",
+  "data": null
+}
+```
+
+## GET /api/submissions/:id
+Returns the submission of selected user.
+
+**Response 200**
+```json
+{
+  "status": "OK",
+  "message": "Submission created successfully",
+  "data": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "department": "Engineering",
+    "years": 3,
+    "average": 4.2,
+    "createdAt": "2025-08-20T16:00:00.000Z",
+    "updatedAt": "2025-08-20T16:00:00.000Z"
+  }
+}
+```
+
+**Validation Errors**
+- If submission not found, response is `404` with:
+```json
+{
+  "status": "ERROR",
+  "message": "Submission not found",
+  "data": null
+}
+```
+
+**Server Error 500**
+```json
+{
+  "status": "ERROR",
+  "message": "<error message>",
+  "data": null
+}
+```
+
 ## POST /api/submissions
 Stores a user's submission and calculates the average score from `answers`.
 
